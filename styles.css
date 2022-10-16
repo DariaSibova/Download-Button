@@ -10,7 +10,7 @@
     --arrowB: polygon(0% 37.5%,100% 37.5%,100% 62.5%,100% 62.5%,50% 62.5%,0% 62.5%,0% 62.5%);
     font-size: calc(20px + (40 - 20)*(100vw - 320px)/(2560 - 320));
   }
-  
+
   body, button {
     display: flex;
     font: 1em/1.5 Hind, sans-serif;
@@ -20,4 +20,47 @@
     height: 100vh;
     overflow: hidden;
   }
-  
+  button {
+  background: #255ff4;
+  border-radius: 0.2em;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  margin: auto;
+  padding: 0.5em 1em;
+  position: relative;
+  transition: background 0.15s linear;
+  width: 10.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+button:focus {
+  outline: transparent;
+}
+button::-moz-focus-inner {
+  border: 0;
+}
+button:not(:disabled):focus, button:not(:disabled):hover {
+  background: #0b46da;
+}
+button:not(:disabled):active {
+  transform: translateY(1px);
+}
+button:disabled {
+  cursor: not-allowed;
+}
+button span, button:before, button:after {
+  display: inline-block;
+  pointer-events: none;
+}
+button:before, button:after {
+  border-radius: 0.25em;
+  opacity: 0;
+  top: 1em;
+  left: 1.3em;
+  height: 0.5em;
+  transform-origin: 0.25em 50%;
+  z-index: 2;
+}
